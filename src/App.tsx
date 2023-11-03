@@ -1,27 +1,22 @@
-import type { Component } from 'solid-js';
+import type { Component } from "solid-js";
 
-import logo from './logo.svg';
-import styles from './App.module.css';
+import { AddBook } from "./components/AddBook";
+import { BookList } from "./components/BookList";
+
+import styles from "./App.module.css";
+
+function BookShelf() {
+  return (
+    <main class={styles.main}>
+      <h1>My bookshelf</h1>
+      <BookList />
+      <AddBook />
+    </main>
+  );
+}
 
 const App: Component = () => {
-  return (
-    <div class={styles.App}>
-      <header class={styles.header}>
-        <img src={logo} class={styles.logo} alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          class={styles.link}
-          href="https://github.com/solidjs/solid"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Solid
-        </a>
-      </header>
-    </div>
-  );
+  return <BookShelf />;
 };
 
 export default App;
